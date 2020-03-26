@@ -40,7 +40,7 @@ function Home({ navigation, route }) {
           data={ data }
           keyExtractor={ item => item.id }
           renderItem={({ item, index }) => (
-            <Item index={ index } onPress={ () => props.navigation.navigate('Details') }>
+            <Item index={ index } onPress={ () => navigation.navigate('Details') }>
               <MovieImage />
             </Item>
           )}
