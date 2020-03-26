@@ -31,7 +31,7 @@ function DrawerNavigator() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
+    <Stack.Navigator headerMode="none" initialRouteName="DrawerNavigator">
       <Stack.Screen name="SplashScreen" component={ SplashScreen } />
       <Stack.Screen name="DrawerNavigator" component={ DrawerNavigator } />
       <Stack.Screen name="Details" component={ Details } />
