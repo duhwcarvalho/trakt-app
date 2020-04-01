@@ -3,6 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import Login from '../containers/login';
+import RecoverPassword from '../containers/recoverPassword';
+import Register from '../containers/register';
+
 import SplashScreen from '../containers/splashScreen';
 import Home from '../containers/home';
 import Details from '../containers/details';
@@ -12,6 +16,16 @@ import { responsiveWidth } from '../helpers/responsive';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+function Authentication() {
+  return (
+    <Stack.Navigator headerMode="none" initialRouteName="Login">
+      <Stack.Screen name="Login" component={ Login } />
+      <Stack.Screen name="RecoverPassword" component={ RecoverPassword } />
+      <Stack.Screen name="Register" component={ Register } />
+    </Stack.Navigator>
+  );
+};
 
 function DrawerNavigator() {
   return (
@@ -31,7 +45,8 @@ function DrawerNavigator() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator headerMode="none" initialRouteName="DrawerNavigator">
+    <Stack.Navigator headerMode="none" initialRouteName="Authentication">
+      <Stack.Screen name="Authentication" component={ Authentication } />
       <Stack.Screen name="SplashScreen" component={ SplashScreen } />
       <Stack.Screen name="DrawerNavigator" component={ DrawerNavigator } />
       <Stack.Screen name="Details" component={ Details } />
