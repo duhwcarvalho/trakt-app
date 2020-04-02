@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { navigationRef } from './rootNavigation';
 
 import Login from '../containers/login';
 import RecoverPassword from '../containers/recoverPassword';
@@ -56,7 +57,7 @@ function StackNavigator() {
 
 export default function Routes() {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <StackNavigator />
     </NavigationContainer>
   )

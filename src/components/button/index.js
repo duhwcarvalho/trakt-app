@@ -7,10 +7,11 @@ import {
 
 function Button({
   style,
-  label
+  label,
+  onPress
 }) {
   return (
-    <ContainerButton style={ style }>
+    <ContainerButton style={ style } onPress={ onPress }>
       <Label>{ label }</Label>
     </ContainerButton>
   );
