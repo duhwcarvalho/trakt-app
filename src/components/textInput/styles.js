@@ -27,3 +27,12 @@ export const Input = styled(InputBase)`
   font-size: ${responsiveWidth(14)}px;
   color: #fff;
 `;
+
+export const Error = styled.Text.attrs({
+  numberOfLines: 1
+})`
+  width: 100%;
+  font-size: ${responsiveWidth(12)}px;
+  text-align: right;
+  color: #fff;
+`;

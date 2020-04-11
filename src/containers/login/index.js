@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import * as Yup from 'yup';
 
 import {
   ScrollView,
@@ -15,6 +16,7 @@ import TextInput from '../../components/textInput';
 
 import { userLogin } from '../../store/actions/user';
 
+
 function Login({
   navigation
 }) {
@@ -22,12 +24,32 @@ function Login({
 
   const dispatch = useDispatch();
 
-  function handleSubmit(data) {
-    console.log(data)
-    dispatch(userLogin({
-      email: 'edu1@gmail.com',
-      password: '123456'
-    }));
+  async function handleSubmit(data) {
+    try {
+      formRef.current.setErrors({});
+
+      const schema = Yup.object().shape({
+        email: Yup.string().email().required(),
+        password: Yup.string().required(),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      dispatch(userLogin(data));
+
+    } catch (err) {
+      const validationErrors = {};
+
+      if (err instanceof Yup.ValidationError) {
+        err.inner.forEach(error => {
+          validationErrors[error.path] = error.message;
+        });
+
+        formRef.current.setErrors(validationErrors);
+      }
+    }
   };
 
   return (
@@ -35,8 +57,17 @@ function Login({
       <ScrollView>
         <LogoTall />
         <FormWrapperLogin ref={formRef} onSubmit={handleSubmit}>
-          <TextInput label="Email" name="email" />
-          <TextInput label="Senha" name="password" />
+          <TextInput
+            label="Email"
+            name="email"
+            autoCapitalize="none"
+          />
+          <TextInput
+            label="Senha"
+            name="password"
+            autoCapitalize="none"
+            secureTextEntry
+          />
         </FormWrapperLogin>
         <HitArea bottom={40} right onPress={() => navigation.navigate('RecoverPassword')}>
           <TextLink>esqueci minha senha</TextLink>

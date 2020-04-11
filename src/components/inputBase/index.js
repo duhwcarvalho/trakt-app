@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 
 import { useField } from '@unform/core';
 
-function InputBase({name, ...rest }) {
+function InputBase({name, setError, ...rest }) {
 
   const inputRef = useRef(null);
   const { fieldName, registerField, defaultValue = '', error } = useField(name);
@@ -27,7 +27,18 @@ function InputBase({name, ...rest }) {
     });
   }, [fieldName, registerField]);
 
-  return <TextInput ref={inputRef} defaultValue={defaultValue} {...rest} />
+  useEffect(() => {
+    setError && setError(error);
+  }, [error])
+
+  return (
+    <TextInput
+      ref={inputRef}
+      defaultValue={defaultValue}
+      autoCorrect={false}
+      {...rest}
+    />
+  );
 }
 
 export default InputBase;

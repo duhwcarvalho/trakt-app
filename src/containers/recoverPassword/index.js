@@ -22,7 +22,11 @@ function RecoverPassword({
           <Icon name="arrowleft" />
         </HitArea>
         <FormWrapperLogin>
-          <TextInput label="Email" value="duhw.carvalho@gmail.com" />
+          <TextInput
+            label="Email"
+            name="email"
+            autoCapitalize="none"
+          />
         </FormWrapperLogin>
         <ButtonLogin label="ENVIAR" />
         <HitArea onPress={() => navigation.navigate('Register')}>

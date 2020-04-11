@@ -22,3 +22,25 @@ export const userLogin = data => {
 
   };
 };
+
+export const userRegister = data => {
+  return dispatch => {
+
+    return dispatch({
+      type: 'USER_REGISTER',
+      payload: new Promise((resolve, reject) => {
+
+        api.post('/users', { ...data }).then(res => {
+          resolve({ ...res.data });
+        }).catch(error => {
+          reject();
+        });
+
+      })
+    })
+    .then(_ => navigate('Login'))
+    .catch(error => console.log(error));
+
+  };
+};
+
