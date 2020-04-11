@@ -3,19 +3,19 @@ import React from 'react';
 import {
   ContainerInput,
   Label,
-  TextInput
+  Input
 } from './styles';
 
-function Input({
+function TextInput({
   label,
-  ...props
+  ...rest
 }) {
   return (
     <ContainerInput>
       <Label>{ label }</Label>
-      <TextInput {...props} />
+      <Input {...rest} />
     </ContainerInput>
   );
 };
 
-export default Input;
+export default TextInput;

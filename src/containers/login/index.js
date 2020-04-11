@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import {
@@ -11,17 +11,19 @@ import {
 } from './styles';
 
 import Container from '../../components/container';
-import Input from '../../components/input';
+import TextInput from '../../components/textInput';
 
 import { userLogin } from '../../store/actions/user';
 
 function Login({
   navigation
 }) {
+  const formRef = useRef(null);
 
   const dispatch = useDispatch();
 
-  function handleSubmit() {
+  function handleSubmit(data) {
+    console.log(data)
     dispatch(userLogin({
       email: 'edu1@gmail.com',
       password: '123456'
@@ -32,14 +34,14 @@ function Login({
     <Container>
       <ScrollView>
         <LogoTall />
-        <FormWrapperLogin>
-          <Input label="Email" value="duhw.carvalho@gmail.com" />
-          <Input label="Senha" value="*******" />
+        <FormWrapperLogin ref={formRef} onSubmit={handleSubmit}>
+          <TextInput label="Email" name="email" />
+          <TextInput label="Senha" name="password" />
         </FormWrapperLogin>
         <HitArea bottom={40} right onPress={() => navigation.navigate('RecoverPassword')}>
           <TextLink>esqueci minha senha</TextLink>
         </HitArea>
-        <ButtonLogin label="ENTRAR" onPress={ handleSubmit } />
+        <ButtonLogin label="ENTRAR" onPress={ () => formRef.current.submitForm() } />
         <HitArea onPress={() => navigation.navigate('Register')}>
           <TextLink>ou cadastre-se</TextLink>
         </HitArea>

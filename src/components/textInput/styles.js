@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { responsiveWidth, responsiveHeight } from '../../helpers/responsive';
 
+import InputBase from '../inputBase';
+
 export const ContainerInput = styled.TouchableOpacity.attrs({
   activeOpacity: 1
 })`
@@ -19,7 +21,7 @@ export const Label = styled.Text.attrs({
   color: #fff;
 `;
 
-export const TextInput = styled.TextInput`
+export const Input = styled(InputBase)`
   flex: 1;
   padding: ${responsiveHeight(12)}px ${responsiveWidth(10)}px ${responsiveHeight(8)}px ${responsiveWidth(10)}px;
   font-size: ${responsiveWidth(14)}px;

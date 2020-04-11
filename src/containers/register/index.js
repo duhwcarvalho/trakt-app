@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 import Container from '../../components/container';
-import Input from '../../components/input';
+import TextInput from '../../components/textInput';
 
 function Register({
   navigation
@@ -22,9 +22,9 @@ function Register({
           <Icon name="arrowleft" />
         </HitArea>
         <FormWrapperLogin>
-          <Input label="Name" value="Eduardo Carvalho" />
-          <Input label="Email" value="duhw.carvalho@gmail.com" />
-          <Input label="Senha" value="*******" />
+          <TextInput label="Name" value="Eduardo Carvalho" />
+          <TextInput label="Email" value="duhw.carvalho@gmail.com" />
+          <TextInput label="Senha" value="*******" />
         </FormWrapperLogin>
         <ButtonLogin label="CADASTRAR" />
         <HitArea onPress={() => navigation.navigate('Login')}>

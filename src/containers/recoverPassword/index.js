@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 import Container from '../../components/container';
-import Input from '../../components/input';
+import TextInput from '../../components/textInput';
 
 function RecoverPassword({
   navigation
@@ -22,7 +22,7 @@ function RecoverPassword({
           <Icon name="arrowleft" />
         </HitArea>
         <FormWrapperLogin>
-          <Input label="Email" value="duhw.carvalho@gmail.com" />
+          <TextInput label="Email" value="duhw.carvalho@gmail.com" />
         </FormWrapperLogin>
         <ButtonLogin label="ENVIAR" />
         <HitArea onPress={() => navigation.navigate('Register')}>
