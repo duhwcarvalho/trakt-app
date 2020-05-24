@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { userLogout } from '../../store/actions/user';
 
 import {
   ContainerMenu,
@@ -11,7 +14,12 @@ import {
 } from './styles';
 
 function Menu({ navigation, state }) {
+  const dispatch = useDispatch();
   const { routeNames, index } = state;
+
+  function handleLogout() {
+    dispatch(userLogout());
+  }
 
   return (
     <ContainerMenu>
@@ -19,7 +27,7 @@ function Menu({ navigation, state }) {
         <Icon name="close" />
       </HitArea>
       <LogoWide />
-      <ListRoutes
+      {/* <ListRoutes
         data={ routeNames }
         keyExtractor={ route => route }
         renderItem={({ item, index: _index }) => (
@@ -27,7 +35,23 @@ function Menu({ navigation, state }) {
             <RouteName>{ item }</RouteName>
           </ItemList>
         )}
-      />
+      /> */}
+      <ListRoutes>
+        {
+          routeNames.map((item, _index) => (
+            <ItemList
+              key={item}
+              onPress={() => navigation.navigate(item)}
+              active={ index === _index }
+            >
+              <RouteName>{ item }</RouteName>
+            </ItemList>
+          ))
+        }
+        <ItemList onPress={handleLogout}>
+          <RouteName>Sair</RouteName>
+        </ItemList>
+      </ListRoutes>
     </ContainerMenu>
   );
 };

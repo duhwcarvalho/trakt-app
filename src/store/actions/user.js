@@ -19,7 +19,6 @@ export const userLogin = data => {
     })
     .then(_ => navigate('DrawerNavigator'))
     .catch(error => console.log(error));
-
   };
 };
 
@@ -40,7 +39,16 @@ export const userRegister = data => {
     })
     .then(_ => navigate('Login'))
     .catch(error => console.log(error));
-
   };
 };
 
+export const userLogout = _ => {
+  return dispatch => {
+
+    dispatch({
+      type: 'USER_LOGOUT'
+    });
+
+    navigate('Login')
+  };
+};

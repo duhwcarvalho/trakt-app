@@ -32,9 +32,7 @@ export const LogoWide = styled(LogoWideSvg)`
   margin-left: ${responsiveWidth(29)}px;
 `;
 
-export const ListRoutes = styled.FlatList.attrs({
-  bounces: false
-})`
+export const ListRoutes = styled.View`
   margin-top: ${responsiveHeight(60)}px;
 `;
 
