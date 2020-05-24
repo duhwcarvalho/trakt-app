@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import {
   ContainerInput,
+  ContentInput,
   Label,
   Input,
   Error
@@ -15,13 +16,13 @@ function TextInput({
   const [ textError, setTextError ] = useState('');
 
   return (
-    <>
-      <ContainerInput>
+    <ContainerInput>
+      <ContentInput>
         <Label>{ label }</Label>
         <Input setError={(err) => setTextError(err)} {...rest} />
-      </ContainerInput>
+      </ContentInput>
       { !!textError && <Error>{ textError }</Error> }
-    </>
+    </ContainerInput>
   );
 };
 

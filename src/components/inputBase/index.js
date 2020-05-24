@@ -6,7 +6,7 @@ import { useField } from '@unform/core';
 function InputBase({name, setError, ...rest }) {
 
   const inputRef = useRef(null);
-  const { fieldName, registerField, defaultValue = '', error } = useField(name);
+  const { fieldName, registerField, defaultValue = '', error, clearError } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -36,6 +36,7 @@ function InputBase({name, setError, ...rest }) {
       ref={inputRef}
       defaultValue={defaultValue}
       autoCorrect={false}
+      onFocus={clearError}
       {...rest}
     />
   );

@@ -7,6 +7,11 @@ export const ContainerInput = styled.TouchableOpacity.attrs({
   activeOpacity: 1
 })`
   width: 100%;
+  height: ${responsiveHeight(75)}px;
+`;
+
+export const ContentInput = styled.View`
+  width: 100%;
   height: ${responsiveHeight(58)}px;
   border-bottom-width: ${responsiveWidth(1)}px;
   border-bottom-color: #fff;
@@ -33,6 +38,7 @@ export const Error = styled.Text.attrs({
 })`
   width: 100%;
   font-size: ${responsiveWidth(12)}px;
+  line-height: ${responsiveHeight(16)}px;
   text-align: right;
   color: #fff;
 `;
