@@ -1362,17 +1362,17 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@unform/core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@unform/core/-/core-2.0.0.tgz#8b84bd2a249358566a6e041a11b8c231e092bf5b"
-  integrity sha512-dNbWoCEZlhLbLydRIbYvYFyY3K42HgFxnks1q+IJPw6otD/c6fAgnkmL3JFgY4CykkXJHzN8AIQpYmUrM2SCow==
+"@unform/core@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@unform/core/-/core-2.1.0.tgz#28c407f5446ed33d37a023ca931c7b61d2a3b425"
+  integrity sha512-zR8hhVBfpVJRm5nVLi9i5EVEtfFe7NuDwGYhZFVQZjXGS9oPU47ZK/rdssodHA/yEdWCHvtfEX7yldegUQ+pPA==
   dependencies:
     dot-object "^2.1.2"
 
-"@unform/mobile@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@unform/mobile/-/mobile-2.0.0.tgz#728eb6109eaff579ea593cb8ed1635cc151e7403"
-  integrity sha512-xFvhBlZh8u42wYSO8b8zf/3a/xergemNv0C2FK97WaX4BnVpuM0gXPjdRPezWVD36/e71kufKa4i8Hog9to9KQ==
+"@unform/mobile@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@unform/mobile/-/mobile-2.1.0.tgz#2ba964840277ec13d028c428b3d401190b7a2205"
+  integrity sha512-2vtuTJSvho+kIkz/BpTeddH0eRogVgchFpRjlVfOwSe8BU2DgJks5lw9J7ghPuy/SqVzyrnpSziBDFVl/4IO0A==
 
 abab@^2.0.0:
   version "2.0.3"
