@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 
+import { userRegister } from '../../store/actions/user';
+
 import {
   ScrollView,
   Icon,
@@ -13,8 +15,6 @@ import {
 
 import Container from '../../components/container';
 import TextInput from '../../components/textInput';
-
-import { userRegister } from '../../store/actions/user';
 
 function Register({
   navigation
@@ -55,7 +55,7 @@ function Register({
   return (
     <Container>
       <ScrollView>
-        <HitArea bottom={60} left onPress={() => navigation.goBack()}>
+        <HitArea bottom={43} left onPress={() => navigation.goBack()}>
           <Icon name="arrowleft" />
         </HitArea>
         <FormWrapperLogin ref={formRef} onSubmit={handleSubmit}>

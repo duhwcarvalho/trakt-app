@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 
+import { userLogin } from '../../store/actions/user';
+
 import {
   ScrollView,
   LogoTall,
@@ -13,9 +15,6 @@ import {
 
 import Container from '../../components/container';
 import TextInput from '../../components/textInput';
-
-import { userLogin } from '../../store/actions/user';
-
 
 function Login({
   navigation
@@ -69,7 +68,7 @@ function Login({
             secureTextEntry
           />
         </FormWrapperLogin>
-        <HitArea bottom={40} right onPress={() => navigation.navigate('RecoverPassword')}>
+        <HitArea bottom={38} right onPress={() => navigation.navigate('RecoverPassword')}>
           <TextLink>esqueci minha senha</TextLink>
         </HitArea>
         <ButtonLogin label="ENTRAR" onPress={ () => formRef.current.submitForm() } />

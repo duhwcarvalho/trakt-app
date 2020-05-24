@@ -18,7 +18,7 @@ function RecoverPassword({
   return (
     <Container>
       <ScrollView>
-        <HitArea bottom={60} left onPress={() => navigation.goBack()}>
+        <HitArea bottom={43} left onPress={() => navigation.goBack()}>
           <Icon name="arrowleft" />
         </HitArea>
         <FormWrapperLogin>

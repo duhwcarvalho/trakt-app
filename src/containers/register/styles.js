@@ -24,7 +24,7 @@ export const Icon = styled(IconAntDesign)`
 `;
 
 export const FormWrapperLogin = styled(FormWrapper)`
-  margin-bottom: ${responsiveHeight(210)}px;
+  margin-bottom: ${responsiveHeight(176)}px;
 `;
 
 export const HitArea = styled.TouchableOpacity.attrs({

@@ -22,11 +22,11 @@ export const LogoTall = styled(LogoTallSvg).attrs({
   width: responsiveWidth(232),
   height: responsiveHeight(222),
 })`
-  margin-bottom: ${responsiveHeight(60)}px;
+  margin-bottom: ${responsiveHeight(40)}px;
 `;
 
 export const FormWrapperLogin = styled(FormWrapper)`
-  margin-bottom: ${responsiveHeight(30)}px;
+  margin-bottom: ${responsiveHeight(20)}px;
 `;
 
 export const HitArea = styled.TouchableOpacity.attrs({
