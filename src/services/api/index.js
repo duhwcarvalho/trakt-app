@@ -10,4 +10,12 @@ const api = axios.create({
   headers
 });
 
+api.interceptors.response.use(response => {
+  return response;
+}, error => {
+  const _error = error.response || error;
+
+  return Promise.reject(_error);
+});
+
 export default api;

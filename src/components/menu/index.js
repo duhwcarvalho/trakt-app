@@ -27,15 +27,6 @@ function Menu({ navigation, state }) {
         <Icon name="close" />
       </HitArea>
       <LogoWide />
-      {/* <ListRoutes
-        data={ routeNames }
-        keyExtractor={ route => route }
-        renderItem={({ item, index: _index }) => (
-          <ItemList onPress={() => navigation.navigate(item)} active={ index === _index }>
-            <RouteName>{ item }</RouteName>
-          </ItemList>
-        )}
-      /> */}
       <ListRoutes>
         {
           routeNames.map((item, _index) => (

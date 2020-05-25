@@ -1,5 +1,7 @@
 import api from '../../services/api';
 
+import { handleModalMessage } from './modalMessage';
+
 import { navigate } from '../../routes/rootNavigation';
 
 export const userLogin = data => {
@@ -10,15 +12,21 @@ export const userLogin = data => {
       payload: new Promise((resolve, reject) => {
 
         api.post('/login', { ...data }).then(res => {
-          resolve({ ...res.data });
+          resolve(res.data);
         }).catch(error => {
-          reject();
+          reject(error);
         });
 
       })
     })
     .then(_ => navigate('DrawerNavigator'))
-    .catch(error => console.log(error));
+    .catch(error => {
+      if (error.status && error.status === 401) {
+        const message = error.data.error;
+
+        dispatch(handleModalMessage(message, false));
+      }
+    });
   };
 };
 
@@ -30,15 +38,21 @@ export const userRegister = data => {
       payload: new Promise((resolve, reject) => {
 
         api.post('/users', { ...data }).then(res => {
-          resolve({ ...res.data });
+          resolve(res.data);
         }).catch(error => {
-          reject();
+          reject(error);
         });
 
       })
     })
     .then(_ => navigate('Login'))
-    .catch(error => console.log(error));
+    .catch(error => {
+      if (error.status && error.status === 401) {
+        const message = error.data.error;
+
+        dispatch(handleModalMessage(message, false));
+      }
+    });
   };
 };
 
